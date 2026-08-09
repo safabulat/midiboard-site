@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="darkreader-lock">
+<title>Midiboard — support</title>
+<meta name="description" content="Help with connecting Midiboard to Windows, macOS or an iPad, and how to get in touch.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="img/appicon.svg">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="index.html">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="6"  y="10" width="38" height="34" rx="8" fill="currentColor"/>
+        <rect x="52" y="10" width="38" height="34" rx="8" fill="currentColor" opacity="0.55"/>
+        <rect x="6"  y="54" width="38" height="34" rx="8" fill="currentColor" opacity="0.55"/>
+        <rect x="52" y="54" width="38" height="34" rx="8" fill="currentColor" opacity="0.28"/>
+        <rect x="66" y="60" width="10" height="22" rx="5" fill="currentColor"/>
+      </svg>
+      Midiboard
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <h1>Support</h1>
+  <p class="updated">Email <a href="mailto:safabulatdev@icloud.com">safabulatdev@icloud.com</a> — a real person reads it.</p>
+
+  <h2>Connecting to Windows</h2>
+  <p>
+    Windows does not accept Bluetooth MIDI into an application directly; it needs a bridge. The route
+    that works, and the one Midiboard is built and tested against:
+  </p>
+  <ol>
+    <li>In Midiboard, tap <b>Connect</b>. The name you set is what the PC will show.</li>
+    <li>On the PC: <b>Settings → Bluetooth &amp; devices → Add device → Bluetooth</b>, and pick that name.</li>
+    <li>Open <b>MIDIBerry</b> and route the Midiboard input into a <b>loopMIDI</b> port.</li>
+    <li>In your host — Gig Performer, Ableton, whatever it is — select that loopMIDI port as a MIDI input.</li>
+  </ol>
+  <p>
+    If the PC pairs but nothing arrives, MIDIBerry is nearly always the missing step: pairing in Windows
+    settings makes the device known, not audible.
+  </p>
+
+  <h2>Connecting to macOS</h2>
+  <p>
+    No bridge needed. <b>Audio MIDI Setup → Window → Show MIDI Studio → Bluetooth</b>, find the name and
+    press Connect. It then behaves like any other MIDI source.
+  </p>
+
+  <h2>Connecting to an iPad</h2>
+  <p>
+    Most iPad music apps have a Bluetooth MIDI panel of their own; open it and connect. Apps that use
+    Apple's standard sheet will list Midiboard by name.
+  </p>
+
+  <h2>It says the link was lost</h2>
+  <p>
+    That message means the app is still holding a connection that has stopped accepting anything —
+    usually a laptop that went to sleep, or a walk out of range. Midiboard drops it and starts
+    advertising again by itself; <b>Retry</b> forces that immediately. If the other machine had gone to
+    sleep, wake it and re-connect from its side.
+  </p>
+
+  <h2>A note is stuck</h2>
+  <p>
+    <b>Panic</b> in the control strip. It clears the app's own note state first and then tells the
+    receiver to silence everything — in that order, because doing it the other way round lets a
+    monophonic widget helpfully retrigger the note underneath as you lift your finger.
+  </p>
+
+  <h2>Something in my host learned the wrong control</h2>
+  <p>
+    Use the <b>Learn</b> buttons in the widget inspector rather than moving the control by hand.
+    A learn sends that one control on its own and mutes everything else the app would send for the
+    duration, so the receiving end has nothing else to latch onto. An XY pad gets a button per axis,
+    which is the case that most needs it — both axes move the instant you touch the pad.
+  </p>
+
+  <h2>Locking the screen during a gig</h2>
+  <p>
+    Nothing playable sits in the home-indicator strip, so an accidental brush at the bottom no longer
+    reveals it. iOS will not let any app disable the swipe-up gesture outright, though. For a
+    performance where nothing may go wrong, use <b>Settings → Accessibility → Guided Access</b>; it is
+    the only true lock the system offers.
+  </p>
+
+  <h2>Reporting a bug</h2>
+  <p>
+    Write to <a href="mailto:safabulatdev@icloud.com">safabulatdev@icloud.com</a>. What helps most:
+    your iOS version, what the other end of the chain is, and what you were doing when it happened —
+    "it did it while I was transposing with a pad held" is worth more than a screenshot.
+  </p>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Midiboard — built by Safa Bulat</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

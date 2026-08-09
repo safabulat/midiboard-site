@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The page ships its own light and dark designs; stop extensions from re-inventing them. -->
+<meta name="darkreader-lock">
+<title>Midiboard — your phone, as the controller you actually wanted</title>
+<meta name="description" content="An iPhone Bluetooth MIDI controller you lay out yourself: pads, keys, chords, XY, wheels and faders on screens you build and switch between mid-set. Made for Gig Performer rigs.">
+<meta property="og:title" content="Midiboard — your phone, as the controller you actually wanted">
+<meta property="og:description" content="Build the control surface, not the workaround. Bluetooth MIDI from an iPhone, with a layout editor that gets out of the way.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="img/appicon.svg">
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="/">
+      <!-- Four pads and a fader: the shortest description of the app that fits in a square. -->
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="6"  y="10" width="38" height="34" rx="8" fill="currentColor"/>
+        <rect x="52" y="10" width="38" height="34" rx="8" fill="currentColor" opacity="0.55"/>
+        <rect x="6"  y="54" width="38" height="34" rx="8" fill="currentColor" opacity="0.55"/>
+        <rect x="52" y="54" width="38" height="34" rx="8" fill="currentColor" opacity="0.28"/>
+        <rect x="66" y="60" width="10" height="22" rx="5" fill="currentColor"/>
+      </svg>
+      Midiboard
+    </a>
+    <nav>
+      <a href="#build">Build it</a>
+      <a href="#play">Play it</a>
+      <a href="#rig">Your rig</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <h1>Your phone, as the controller you <em>actually wanted</em>.</h1>
+  <p class="lede">
+    Midiboard turns an iPhone into a Bluetooth MIDI controller you lay out yourself — pads, keys,
+    chords, wheels, XY pads and faders, arranged on screens you build and flip between mid-set.
+    Every other phone controller hands you someone else's idea of a surface. This one hands you the grid.
+  </p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#" aria-disabled="true">App Store — soon</a>
+    <a class="btn btn-ghost" href="#rig">See how it connects</a>
+  </div>
+  <p class="cta-note">iPhone · landscape · Bluetooth LE MIDI · no cable, no dongle, no account</p>
+
+  <!-- TODO (site/README.md): replace with the real screen. A pad page mid-performance, several pads lit. -->
+  <figure class="shot">
+    <div class="placeholder">
+      <strong>Screenshot: a pad page, mid-song</strong>
+      <span>Landscape. Pads lit, transpose control bottom-left, page tabs across the top.</span>
+    </div>
+    <figcaption>Placeholder — the real screens land here once the visual pass is finished.</figcaption>
+  </figure>
+</div>
+
+<section id="build">
+  <div class="wrap">
+    <h2>You build the surface.</h2>
+    <p>
+      Drop a widget on the grid, drag it where your hand goes, size it to the reach you actually have.
+      Save the screen. Build the next one. A set is a handful of screens and one tap between them —
+      not a menu you go hunting through while the song is running.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3><span class="dot"></span>Pad grids</h3>
+        <p>
+          Any size. Rows can count chromatically, or step in fourths, fifths, thirds or octaves — a grid
+          tuned in fourths keeps every chord shape the same wherever you move it.
+        </p>
+      </div>
+      <div class="card">
+        <h3><span class="dot a"></span>Keyboards</h3>
+        <p>
+          A piano roll of any span, starting on any note. Slide between keys for a glissando; the black
+          and white pattern stays put when you transpose, the way hardware does.
+        </p>
+      </div>
+      <div class="card">
+        <h3><span class="dot m"></span>Chord buttons</h3>
+        <p>
+          Write the notes yourself. C, E, G♯, D is as valid as a minor triad. Transpose and the whole
+          voicing moves with it — the shapes worth a button are usually the ones with no name.
+        </p>
+      </div>
+      <div class="card">
+        <h3><span class="dot g"></span>Wheels, faders, XY</h3>
+        <p>
+          Pitch and mod wheels shaped like the ones next to your keyboard, 270° arcs, endless rotaries,
+          faders and two-axis pads. Spring back to centre or hold where you left them.
+        </p>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Transpose, per group</h3>
+        <p>
+          Tag a widget to a group and give that group its own −/+ control. A bass bank and a lead
+          keyboard on the same page move independently, and one tap puts either back to zero.
+        </p>
+      </div>
+      <div class="card">
+        <h3><span class="dot a"></span>Keys and scales</h3>
+        <p>
+          Set the key per widget. Notes outside it either dim and lose their labels — still playable,
+          just no longer shouting — or snap to the nearest note inside it, so nothing wrong can be hit.
+        </p>
+      </div>
+    </div>
+
+    <!-- TODO (site/README.md): replace with the real editor screen, one widget selected. -->
+    <figure class="shot">
+      <div class="placeholder">
+        <strong>Screenshot: the layout editor</strong>
+        <span>A widget selected, resize handles showing, inspector open down the right-hand side.</span>
+      </div>
+      <figcaption>Placeholder — the editor, with a widget selected.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="play">
+  <div class="wrap">
+    <h2>Then it gets out of the way.</h2>
+    <p>
+      A controller is only as good as the things it does not do to you halfway through a song. Most of
+      the work here went into the failure cases.
+    </p>
+
+    <ul class="plain">
+      <li><b>The connection is watched, not assumed.</b> A sleeping laptop or a walk out of range shows up as a red light and an automatic reconnect — not as a green light and silence.</li>
+      <li><b>Notes never stick.</b> Transposing with a pad held releases the note that was actually played, not the one the settings now describe. Panic clears the app's own state before it tells the receiver anything.</li>
+      <li><b>Nothing playable sits in the swipe-up strip.</b> A pad there means a held low note makes the home indicator glow and a slid finger can hand the screen to Siri. There is empty space instead.</li>
+      <li><b>MIDI learn mutes everything else.</b> The receiving end binds to whatever arrives first, so during a learn nothing else is allowed to arrive.</li>
+      <li><b>Haptics per control.</b> A tap you can feel through the strap, set per widget, because a glass screen gives you nothing back and Bluetooth's round trip is long enough to notice.</li>
+      <li><b>Your layout survives updates.</b> Every setting a widget gains loads into layouts saved before it existed. Nothing you built gets replaced by a default.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="rig">
+  <div class="wrap">
+    <h2>It fits the rig you already have.</h2>
+    <p>
+      Midiboard advertises itself over Bluetooth LE MIDI under a name you choose — so it shows up as
+      <em>Midiboard</em> in the list, not as "iPhone". From there it is an ordinary MIDI source.
+    </p>
+
+    <div class="chain">
+      <span class="node us">Midiboard</span>
+      <span class="arrow">→ BLE →</span>
+      <span class="node">Windows</span>
+      <span class="arrow">→</span>
+      <span class="node">MIDIBerry</span>
+      <span class="arrow">→</span>
+      <span class="node">loopMIDI</span>
+      <span class="arrow">→</span>
+      <span class="node">Gig Performer</span>
+    </div>
+
+    <ul class="plain">
+      <li><b>Windows</b> — pair it in Bluetooth settings, bridge it in with MIDIBerry and loopMIDI, then pick that port in your host. Tested on a ROG Ally running Gig Performer.</li>
+      <li><b>macOS</b> — Audio MIDI Setup → MIDI Studio → Bluetooth, connect, done. No bridge needed.</li>
+      <li><b>iPad</b> — connects directly to any app that accepts Bluetooth MIDI.</li>
+    </ul>
+
+    <!-- TODO (site/README.md): replace with a photo of the phone next to the rig, playing. -->
+    <figure class="shot">
+      <div class="placeholder">
+        <strong>Photo: the phone on the rig</strong>
+        <span>Phone clamped beside the keyboard, ROG Ally running Gig Performer behind it.</span>
+      </div>
+      <figcaption>Placeholder — the thing in the place it is meant to be.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Midiboard — built by Safa Bulat</span>
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

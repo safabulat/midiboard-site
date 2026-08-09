@@ -1,0 +1,235 @@
+/* Midiboard — landing page.
+   Near-black and electric cyan, with the widget hues from the app itself used as accents. Dark first,
+   because that is what the app is and what the room is when you are using it; light is a real design
+   rather than an inversion, because App Store review and half the world browse in it.
+   No framework, no build step, no external requests — the whole site is three HTML files and this
+   stylesheet, so it drops onto any host. */
+
+:root {
+    --cyan:      #35d3ef;
+    --cyan-dim:  #1fa8c0;
+    --bg:        #0a0b0d;
+    --bg-raise:  #14161a;
+    --bg-sink:   #050506;
+    --line:      #23262c;
+    --ink:       #f1f4f7;
+    --ink-soft:  #99a1ab;
+    --ink-faint: #626973;
+    --green:     #35e07a;
+    --amber:     #ffb340;
+    --magenta:   #ff5ea8;
+    --radius:    14px;
+    --page:      1080px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg:        #f7f8fa;
+        --bg-raise:  #ffffff;
+        --bg-sink:   #eceff3;
+        --line:      #dde1e7;
+        --ink:       #0d1015;
+        --ink-soft:  #545c66;
+        --ink-faint: #858d97;
+        --cyan:      #0d7f96;
+        --cyan-dim:  #0a6376;
+        --green:     #16924a;
+        --amber:     #a86a00;
+        --magenta:   #b8256b;
+    }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h2 {
+    font-size: clamp(24px, 3.4vw, 34px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin: 0 0 14px;
+}
+
+.wrap { max-width: var(--page); margin: 0 auto; padding: 0 24px; }
+
+/* ── header ─────────────────────────────────────────────────────────────── */
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    position: sticky; top: 0;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: saturate(160%) blur(12px);
+    z-index: 10;
+}
+header .wrap { display: flex; align-items: center; gap: 12px; }
+.wordmark {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 650; letter-spacing: -0.01em; color: var(--ink);
+}
+.wordmark:hover { text-decoration: none; }
+.mark { width: 26px; height: 26px; color: var(--cyan); flex: none; }
+header nav { margin-left: auto; display: flex; gap: 22px; font-size: 14px; }
+header nav a { color: var(--ink-soft); }
+header nav a:hover { color: var(--ink); text-decoration: none; }
+
+/* ── hero ───────────────────────────────────────────────────────────────── */
+.hero { padding: 80px 0 56px; text-align: center; }
+.hero h1 {
+    margin: 0 auto 18px;
+    max-width: 16ch;
+    font-size: clamp(34px, 6.2vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+}
+.hero h1 em { font-style: normal; color: var(--cyan); }
+.lede {
+    margin: 0 auto;
+    max-width: 62ch;
+    font-size: clamp(16px, 1.9vw, 19px);
+    color: var(--ink-soft);
+}
+
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 30px 0 12px; }
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 11px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid transparent;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--cyan); color: #04222a; }
+.btn-primary:hover { background: var(--cyan-dim); }
+.btn-ghost { border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--ink-faint); }
+.btn[aria-disabled="true"] { opacity: 0.55; cursor: default; pointer-events: none; }
+.cta-note { margin: 0; font-size: 13px; color: var(--ink-faint); }
+
+/* ── shots ──────────────────────────────────────────────────────────────── */
+figure { margin: 0; }
+.shot {
+    margin: 44px auto 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--bg-sink);
+    overflow: hidden;
+    max-width: 900px;
+}
+.shot img { display: block; width: 100%; height: auto; }
+.shot figcaption {
+    padding: 11px 16px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-faint);
+}
+
+/* A placeholder is honest about being one: it says what belongs there rather than
+   pretending to be the thing. */
+.placeholder {
+    aspect-ratio: 19.5 / 9;
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    text-align: center;
+    padding: 20px;
+    background:
+        repeating-linear-gradient(45deg,
+            transparent 0 14px,
+            color-mix(in srgb, var(--ink) 4%, transparent) 14px 28px),
+        var(--bg-raise);
+    color: var(--ink-faint);
+}
+.placeholder strong { color: var(--ink-soft); font-size: 14px; font-weight: 600; }
+.placeholder span { font-size: 12.5px; }
+
+/* ── sections ───────────────────────────────────────────────────────────── */
+section { padding: 70px 0; border-top: 1px solid var(--line); }
+section > .wrap > p { color: var(--ink-soft); max-width: 70ch; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+}
+.card {
+    background: var(--bg-raise);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+}
+.card h3 {
+    margin: 0 0 8px;
+    font-size: 16.5px;
+    letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 9px;
+}
+.card p { margin: 0; font-size: 14.5px; color: var(--ink-soft); }
+.dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--cyan); }
+.dot.a { background: var(--amber); }
+.dot.g { background: var(--green); }
+.dot.m { background: var(--magenta); }
+
+/* ── the signal chain ───────────────────────────────────────────────────── */
+.chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 22px;
+    background: var(--bg-raise);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+.chain .node {
+    padding: 9px 14px;
+    border-radius: 9px;
+    background: var(--bg-sink);
+    border: 1px solid var(--line);
+    font-size: 14px;
+    white-space: nowrap;
+}
+.chain .node.us { border-color: var(--cyan); color: var(--cyan); font-weight: 600; }
+.chain .arrow { color: var(--ink-faint); font-size: 13px; }
+
+/* ── plain lists ────────────────────────────────────────────────────────── */
+.plain { margin: 26px 0 0; padding: 0; list-style: none; }
+.plain li {
+    padding: 11px 0;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 15px;
+}
+.plain li b { color: var(--ink); font-weight: 600; }
+
+/* ── footer ─────────────────────────────────────────────────────────────── */
+footer {
+    border-top: 1px solid var(--line);
+    padding: 34px 0 56px;
+    color: var(--ink-faint);
+    font-size: 13.5px;
+}
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+footer nav { margin-left: auto; display: flex; gap: 20px; }
+footer a { color: var(--ink-soft); }
+
+/* ── support / privacy pages ────────────────────────────────────────────── */
+.doc { padding: 56px 0 30px; }
+.doc h1 { font-size: clamp(28px, 4.6vw, 40px); letter-spacing: -0.03em; margin: 0 0 10px; }
+.doc h2 { font-size: 20px; margin: 38px 0 10px; }
+.doc p, .doc li { color: var(--ink-soft); max-width: 72ch; }
+.doc .updated { color: var(--ink-faint); font-size: 13.5px; margin-top: 0; }
