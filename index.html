@@ -6,7 +6,7 @@
 <!-- The page ships its own light and dark designs; stop extensions from re-inventing them. -->
 <meta name="darkreader-lock">
 <title>Midiboard — your phone, as the controller you actually wanted</title>
-<meta name="description" content="An iPhone Bluetooth MIDI controller you lay out yourself: pads, keys, chords, XY, wheels and faders on screens you build and switch between mid-set. Made for Gig Performer rigs.">
+<meta name="description" content="An iPhone Bluetooth MIDI controller you lay out yourself: pads, keys, chords, XY, wheels and faders on screens you build and switch between mid-set. Standard Bluetooth MIDI, so it works with whatever you already play.">
 <meta property="og:title" content="Midiboard — your phone, as the controller you actually wanted">
 <meta property="og:description" content="Build the control surface, not the workaround. Bluetooth MIDI from an iPhone, with a layout editor that gets out of the way.">
 <meta property="og:type" content="website">
@@ -154,18 +154,14 @@
 
     <div class="chain">
       <span class="node us">Midiboard</span>
-      <span class="arrow">→ BLE →</span>
-      <span class="node">Windows</span>
+      <span class="arrow">→ Bluetooth LE MIDI →</span>
+      <span class="node">your computer</span>
       <span class="arrow">→</span>
-      <span class="node">MIDIBerry</span>
-      <span class="arrow">→</span>
-      <span class="node">loopMIDI</span>
-      <span class="arrow">→</span>
-      <span class="node">Gig Performer</span>
+      <span class="node">any MIDI software</span>
     </div>
 
     <ul class="plain">
-      <li><b>Windows</b> — pair it in Bluetooth settings, bridge it in with MIDIBerry and loopMIDI, then pick that port in your host. Tested on a ROG Ally running Gig Performer.</li>
+      <li><b>Windows</b> — pair it in Bluetooth settings. Windows does not route Bluetooth MIDI into applications on its own, so a bridge utility and a virtual MIDI port are needed; after that it is an ordinary MIDI input everywhere.</li>
       <li><b>macOS</b> — Audio MIDI Setup → MIDI Studio → Bluetooth, connect, done. No bridge needed.</li>
       <li><b>iPad</b> — connects directly to any app that accepts Bluetooth MIDI.</li>
     </ul>
@@ -174,7 +170,7 @@
     <figure class="shot">
       <div class="placeholder">
         <strong>Photo: the phone on the rig</strong>
-        <span>Phone clamped beside the keyboard, ROG Ally running Gig Performer behind it.</span>
+        <span>Phone clamped beside the keyboard, the rig running behind it.</span>
       </div>
       <figcaption>Placeholder — the thing in the place it is meant to be.</figcaption>
     </figure>

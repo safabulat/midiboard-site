@@ -36,17 +36,17 @@
 
   <h2>Connecting to Windows</h2>
   <p>
-    Windows does not accept Bluetooth MIDI into an application directly; it needs a bridge. The route
-    that works, and the one Midiboard is built and tested against:
+    Windows does not accept Bluetooth MIDI into an application directly; it needs a bridge. Any
+    Bluetooth-MIDI bridge utility paired with a virtual MIDI port will do:
   </p>
   <ol>
     <li>In Midiboard, tap <b>Connect</b>. The name you set is what the PC will show.</li>
     <li>On the PC: <b>Settings → Bluetooth &amp; devices → Add device → Bluetooth</b>, and pick that name.</li>
-    <li>Open <b>MIDIBerry</b> and route the Midiboard input into a <b>loopMIDI</b> port.</li>
-    <li>In your host — Gig Performer, Ableton, whatever it is — select that loopMIDI port as a MIDI input.</li>
+    <li>In the bridge utility, route the Midiboard input into a virtual MIDI port.</li>
+    <li>In whatever you are playing, select that port as a MIDI input.</li>
   </ol>
   <p>
-    If the PC pairs but nothing arrives, MIDIBerry is nearly always the missing step: pairing in Windows
+    If the PC pairs but nothing arrives, the bridge is nearly always the missing step: pairing in Windows
     settings makes the device known, not audible.
   </p>
 
