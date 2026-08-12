@@ -136,25 +136,6 @@ figure { margin: 0; }
     color: var(--ink-faint);
 }
 
-/* A placeholder is honest about being one: it says what belongs there rather than
-   pretending to be the thing. */
-.placeholder {
-    aspect-ratio: 19.5 / 9;
-    display: grid;
-    place-content: center;
-    gap: 6px;
-    text-align: center;
-    padding: 20px;
-    background:
-        repeating-linear-gradient(45deg,
-            transparent 0 14px,
-            color-mix(in srgb, var(--ink) 4%, transparent) 14px 28px),
-        var(--bg-raise);
-    color: var(--ink-faint);
-}
-.placeholder strong { color: var(--ink-soft); font-size: 14px; font-weight: 600; }
-.placeholder span { font-size: 12.5px; }
-
 /* ── sections ───────────────────────────────────────────────────────────── */
 section { padding: 70px 0; border-top: 1px solid var(--line); }
 section > .wrap > p { color: var(--ink-soft); max-width: 70ch; }
@@ -215,6 +196,9 @@ section > .wrap > p { color: var(--ink-soft); max-width: 70ch; }
     font-size: 15px;
 }
 .plain li b { color: var(--ink); font-weight: 600; }
+
+/* A section that exists only to carry an image: no heading, less air around it. */
+.quiet { padding-top: 0; }
 
 /* ── footer ─────────────────────────────────────────────────────────────── */
 footer {
