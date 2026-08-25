@@ -1,12 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- Placeholder mark: four pads and a fader, which is the shortest description of the app
-       that fits in a square. Replace with the real icon once it exists. -->
-  <rect width="100" height="100" rx="22" fill="#0a0b0d"/>
-  <g fill="#35d3ef">
-    <rect x="14" y="18" width="32" height="28" rx="7"/>
-    <rect x="54" y="18" width="32" height="28" rx="7" opacity="0.55"/>
-    <rect x="14" y="54" width="32" height="28" rx="7" opacity="0.55"/>
-    <rect x="54" y="54" width="32" height="28" rx="7" opacity="0.24"/>
-    <rect x="66" y="59" width="8" height="18" rx="4"/>
+  <!-- The app icon: four pads, one per colour the editor assigns. Matches Assets.xcassets/AppIcon. -->
+  <rect width="100" height="100" rx="22" fill="#0b0d11"/>
+  <g>
+    <rect x="17" y="17" width="30" height="30" rx="8" fill="#e14cc4"/>
+    <rect x="53" y="17" width="30" height="30" rx="8" fill="#f0a02c"/>
+    <rect x="17" y="53" width="30" height="30" rx="8" fill="#33bff0"/>
+    <rect x="53" y="53" width="30" height="30" rx="8" fill="#2fdd9b"/>
   </g>
 </svg>
