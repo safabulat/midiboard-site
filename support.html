@@ -55,6 +55,39 @@
     press Connect. It then behaves like any other MIDI source.
   </p>
 
+  <h2>Connecting over Wi-Fi instead of Bluetooth</h2>
+  <p>
+    Midiboard can offer an <b>RTP-MIDI</b> session on your network rather than a Bluetooth link. Nothing
+    is paired: the phone offers the session and the computer joins it, so the connection is always made
+    from the computer's end. Turn it on in Midiboard under <b>Settings → Connection → Over Wi-Fi</b>.
+  </p>
+  <p>
+    ⚠️ Wi-Fi and Bluetooth cannot both be live. A network session needs a CoreMIDI client, and holding
+    one is what stops a computer completing a Bluetooth pairing — so turning Wi-Fi on stops advertising,
+    and turning it off gives the radio back.
+  </p>
+  <ol>
+    <li><b>On a Mac</b>, nothing to install: <b>Audio MIDI Setup → Window → Show MIDI Studio → Configure
+      Network Driver</b>. Add a session under <em>My Sessions</em> and tick <b>Enabled</b> — without that
+      the directory below it does nothing, which is where most people stop. Find this phone under
+      <em>Directory</em>, press <b>Connect</b>, and choose the session as your MIDI input.</li>
+    <li><b>On Windows</b>, install <b>rtpMIDI</b>, which gives Windows the network-MIDI support macOS has
+      built in. Enable a session there, find this phone in its directory and connect.</li>
+  </ol>
+  <p>
+    <b>If the Windows directory stays empty, the answer is almost always Bonjour.</b> rtpMIDI discovers
+    devices through Apple's Bonjour service and reports nothing at all when it is missing — no error, no
+    warning, just an empty list. Make sure the Bonjour service is installed and running, and give
+    <b>both rtpMIDI and Bonjour</b> their own exceptions in Windows Firewall. One exception is not enough.
+  </p>
+  <p>
+    The phone appears under the device's own name (iOS <b>Settings → General → About → Name</b>), not
+    under the Bluetooth name you set in Midiboard. And once you are on Wi-Fi, the port your software
+    plays through is the <em>session's</em> — a Mac that has ever paired keeps an old
+    <em>Midiboard Bluetooth</em> entry in the list, and picking that one gives silence with no
+    explanation.
+  </p>
+
   <h2>Connecting to an iPad</h2>
   <p>
     Most iPad music apps have a Bluetooth MIDI panel of their own; open it and connect. Apps that use

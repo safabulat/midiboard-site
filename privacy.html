@@ -31,11 +31,13 @@
 
 <div class="wrap doc">
   <h1>Privacy</h1>
-  <p class="updated">Last updated: 9 August 2026</p>
+  <p class="updated">Last updated: 1 September 2026 — MIDI over Wi-Fi was added in 1.0.3, and the section on it below is new.</p>
 
   <p>
     Midiboard collects nothing. There is no account, no sign-in, no analytics, no crash reporting and no
-    advertising. The app makes no network requests of any kind.
+    advertising. Nothing about you is gathered, and nothing is ever sent to us or to anyone else.
+    From version 1.0.3 the app can carry MIDI over your local network if you switch that on — see
+    <a href="#wifi">MIDI over Wi-Fi</a> below, which is the only network the app ever touches.
   </p>
 
   <h2>What stays on your device</h2>
@@ -57,11 +59,26 @@
     something you are comfortable being visible to Bluetooth devices nearby.
   </p>
 
-  <h2>If that changes</h2>
+  <h2 id="wifi">MIDI over Wi-Fi</h2>
   <p>
-    If a future version ever needs to send anything anywhere — syncing layouts between devices would be
-    the obvious candidate — it will be something you switch on, it will be described here first, and
-    this page will say when it changed.
+    From 1.0.3 Midiboard can reach a computer over your local network instead of over Bluetooth, using
+    the standard RTP-MIDI session protocol that macOS has built in. It is <b>off unless you turn it
+    on</b>, in Settings → Connection.
+  </p>
+  <p>
+    When it is on, the phone offers a session on the network it is already joined to and waits; a
+    computer on that same network joins it. What travels is the same thing Bluetooth carries — MIDI
+    messages, and nothing else — and it goes only to the machine that connected. Nothing leaves your
+    network, nothing reaches the internet, and nothing reaches us. The phone is discoverable under the
+    device name iOS already publishes (Settings → General → About → Name) for as long as the session is
+    switched on.
+  </p>
+
+  <h2>If that changes again</h2>
+  <p>
+    If a future version ever needs to send anything beyond your own network — syncing layouts between
+    devices would be the obvious candidate — it will be something you switch on, it will be described
+    here first, and this page will say when it changed. That is what happened with Wi-Fi above.
   </p>
 
   <h2>Contact</h2>

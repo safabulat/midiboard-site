@@ -6,9 +6,9 @@
 <!-- The page ships its own light and dark designs; stop extensions from re-inventing them. -->
 <meta name="darkreader-lock">
 <title>Midiboard — your phone, as the controller you actually wanted</title>
-<meta name="description" content="An iPhone Bluetooth MIDI controller you lay out yourself: pads, keys, chords, XY, wheels and faders on screens you build and switch between mid-set. Standard Bluetooth MIDI, so it works with whatever you already play.">
+<meta name="description" content="An iPhone MIDI controller you lay out yourself: pads, keys, chords, XY, wheels and faders on screens you build and switch between mid-set. Standard MIDI over Bluetooth LE or Wi-Fi, so it works with whatever you already play.">
 <meta property="og:title" content="Midiboard — your phone, as the controller you actually wanted">
-<meta property="og:description" content="Build the control surface, not the workaround. Bluetooth MIDI from an iPhone, with a layout editor that gets out of the way.">
+<meta property="og:description" content="Build the control surface, not the workaround. MIDI from an iPhone over Bluetooth or Wi-Fi, with a layout editor that gets out of the way.">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="img/appicon.svg">
@@ -39,7 +39,7 @@
 <div class="wrap hero">
   <h1>Your phone, as the controller you <em>actually wanted</em>.</h1>
   <p class="lede">
-    Midiboard turns an iPhone into a Bluetooth MIDI controller you lay out yourself — pads, keys,
+    Midiboard turns an iPhone into a MIDI controller you lay out yourself — pads, keys,
     chords, wheels, XY pads and faders, arranged on screens you build and flip between mid-set.
     Every other phone controller hands you someone else's idea of a surface. This one hands you the grid.
   </p>
@@ -47,7 +47,7 @@
     <a class="btn btn-primary" href="https://apps.apple.com/app/id6801598625">Get it on the App Store</a>
     <a class="btn btn-ghost" href="#rig">See how it connects</a>
   </div>
-  <p class="cta-note">iPhone · landscape · Bluetooth LE MIDI · no cable, no dongle, no account</p>
+  <p class="cta-note">iPhone · landscape · Bluetooth LE MIDI or Wi-Fi · no cable, no dongle, no account</p>
 
   <figure class="shot">
     <img src="img/surface.jpg" width="1600" height="736" alt="A Midiboard page in a phone, headed “You build the surface”: a step sequencer, a pad bank in a key, three footswitches named Clean, Rhythm and Lead, chord buttons, a bend fader and a balance knob reading +17.">
@@ -160,22 +160,26 @@
   <div class="wrap">
     <h2>It fits the rig you already have.</h2>
     <p>
-      Midiboard advertises itself over Bluetooth LE MIDI under a name you choose — so it shows up as
-      <em>Midiboard</em> in the list, not as "iPhone". From there it is an ordinary MIDI source.
+      Two routes, and you pick the one your rig has. Over <b>Bluetooth LE MIDI</b> Midiboard advertises
+      itself under a name you choose — so it shows up as <em>Midiboard</em> in the list, not as "iPhone".
+      Over <b>Wi-Fi</b> it offers an RTP-MIDI session your computer joins instead. Either way, from there
+      it is an ordinary MIDI source.
     </p>
 
     <div class="chain">
       <span class="node us">Midiboard</span>
-      <span class="arrow">→ Bluetooth LE MIDI →</span>
+      <span class="arrow">→ Bluetooth LE or Wi-Fi →</span>
       <span class="node">your computer</span>
       <span class="arrow">→</span>
       <span class="node">any MIDI software</span>
     </div>
 
     <ul class="plain">
-      <li><b>Windows</b> — pair it in Bluetooth settings. Windows does not route Bluetooth MIDI into applications on its own, so a bridge utility and a virtual MIDI port are needed; after that it is an ordinary MIDI input everywhere.</li>
-      <li><b>macOS</b> — Audio MIDI Setup → MIDI Studio → Bluetooth, connect, done. No bridge needed.</li>
+      <li><b>Windows, over Bluetooth</b> — pair it in Bluetooth settings. Windows does not route Bluetooth MIDI into applications on its own, so a bridge utility and a virtual MIDI port are needed; after that it is an ordinary MIDI input everywhere.</li>
+      <li><b>Windows, over Wi-Fi</b> — install rtpMIDI, enable a session, and connect to this phone from its directory. rtpMIDI finds the phone through Bonjour, so <b>Bonjour has to be running and both need a firewall exception</b> — without it the directory simply stays empty and says nothing.</li>
+      <li><b>macOS</b> — Bluetooth: Audio MIDI Setup → MIDI Studio → Bluetooth, connect, done. Wi-Fi: the same window's <b>Configure Network Driver</b>, add a session, turn <b>Enabled</b> on, then connect to the phone in the Directory. No bridge either way.</li>
       <li><b>iPad</b> — connects directly to any app that accepts Bluetooth MIDI.</li>
+      <li><b>This phone</b> — it can open a MIDI port for other apps on the same device, so GarageBand can be played without a computer at all.</li>
     </ul>
 
     <figure class="shot">
