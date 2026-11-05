@@ -217,3 +217,15 @@ footer a { color: var(--ink-soft); }
 .doc h2 { font-size: 20px; margin: 38px 0 10px; }
 .doc p, .doc li { color: var(--ink-soft); max-width: 72ch; }
 .doc .updated { color: var(--ink-faint); font-size: 13.5px; margin-top: 0; }
+
+/* bulatapps.com — the way out to the other apps. Last in the nav, set off by a hairline, and the one
+   link that stays when the nav folds away on a phone: a visitor who came for this app is the one
+   who has not seen the others yet. */
+header nav a.hub { padding-left: 18px; border-left: 1px solid rgba(127,127,127,.35); }
+/* On a phone the nav had no fold at all and already ran wide; with the hub link added the section
+   anchors give way first — they are the same page you are scrolling anyway. */
+@media (max-width: 760px) {
+    header nav { gap: 14px; }
+    header nav a[href^="#"] { display: none; }
+    header nav a.hub { padding-left: 14px; }
+}
