@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="darkreader-lock">
+<title>Bluetooth MIDI on Windows — use your iPhone as a MIDI controller | Midiboard</title>
+<meta name="description" content="Step by step: pair an iPhone with a Windows PC over Bluetooth MIDI, bridge it with MIDIberry and loopMIDI, and play Gig Performer, Ableton Live, FL Studio or Reaper from the phone.">
+<link rel="canonical" href="https://midiboard.bulatapps.com/windows.html">
+<meta property="og:title" content="Bluetooth MIDI on Windows — iPhone as a MIDI controller">
+<meta property="og:description" content="Pair, bridge with MIDIberry, route through loopMIDI, play any DAW. Four steps, five minutes.">
+<meta property="og:image" content="https://midiboard.bulatapps.com/img/surface.jpg">
+<meta property="og:url" content="https://midiboard.bulatapps.com/windows.html">
+<meta name="apple-itunes-app" content="app-id=6801598625">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="img/appicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Use an iPhone as a Bluetooth MIDI controller on Windows",
+  "description": "Pair the phone, bridge Bluetooth MIDI with MIDIberry, route it through a loopMIDI virtual port, and select that port in your DAW.",
+  "tool": [{"@type": "HowToTool", "name": "MIDIberry (free, Microsoft Store)"},
+           {"@type": "HowToTool", "name": "loopMIDI (free)"},
+           {"@type": "HowToTool", "name": "Midiboard for iPhone"}],
+  "step": [
+    {"@type": "HowToStep", "name": "Install the two utilities", "text": "Install MIDIberry from the Microsoft Store and loopMIDI from Tobias Erichsen's site."},
+    {"@type": "HowToStep", "name": "Create a virtual port", "text": "Open loopMIDI and press + to create a port, for example 'Midiboard Port'."},
+    {"@type": "HowToStep", "name": "Pair the phone", "text": "In Midiboard tap Connect, then on the PC open Settings, Bluetooth & devices, Add device, Bluetooth, and pick the phone's name."},
+    {"@type": "HowToStep", "name": "Bridge it", "text": "Open MIDIberry. Set Input to the phone and Output to the loopMIDI port. Leave MIDIberry running."},
+    {"@type": "HowToStep", "name": "Select the port in your DAW", "text": "In Gig Performer, Ableton Live, FL Studio or Reaper, enable the loopMIDI port as a MIDI input."}
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="index.html">
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+        <rect x="8"  y="8"  width="38" height="38" rx="10" fill="#e14cc4"/>
+        <rect x="54" y="8"  width="38" height="38" rx="10" fill="#f0a02c"/>
+        <rect x="8"  y="54" width="38" height="38" rx="10" fill="#33bff0"/>
+        <rect x="54" y="54" width="38" height="38" rx="10" fill="#2fdd9b"/>
+      </svg>
+      Midiboard
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a class="hub" href="https://bulatapps.com/">bulatapps.com</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap doc">
+  <h1>Bluetooth MIDI on Windows</h1>
+  <p class="updated">Use your iPhone as a wireless MIDI controller for Gig Performer, Ableton Live, FL Studio,
+    Reaper or any other Windows music software. Five minutes, two free utilities, no cables.</p>
+
+  <h2>Why Windows needs two extra pieces</h2>
+  <p>
+    A Mac or an iPad accepts a Bluetooth MIDI device directly. Windows pairs one, but does not hand it to
+    music software as an ordinary MIDI input — so after pairing, the DAW still sees nothing. Two small
+    free utilities close that gap:
+  </p>
+  <ul>
+    <li><b>MIDIberry</b> (Microsoft Store) reads the Bluetooth MIDI device through Windows' own
+      Bluetooth MIDI support and forwards it.</li>
+    <li><b>loopMIDI</b> (by Tobias Erichsen) creates a virtual MIDI port: MIDIberry writes into it, and
+      your DAW reads from it like a cable.</li>
+  </ul>
+  <p>The chain, once it is set up: <b>iPhone → Bluetooth → MIDIberry → loopMIDI port → your DAW</b>.</p>
+
+  <h2>Set it up</h2>
+  <ol>
+    <li><b>Install both utilities.</b> MIDIberry from the Microsoft Store; loopMIDI from
+      <a href="https://www.tobias-erichsen.de/software/loopmidi.html" rel="noopener">tobias-erichsen.de</a>.</li>
+    <li><b>Create a virtual port.</b> Open loopMIDI, type a name such as <em>Midiboard Port</em>, press
+      <b>+</b>. Leave loopMIDI running; it sits in the tray.</li>
+    <li><b>Pair the phone.</b> In Midiboard tap <b>Connect</b> — the name shown there is what Windows will
+      list. On the PC: <b>Settings → Bluetooth &amp; devices → Add device → Bluetooth</b>, and pick it.</li>
+    <li><b>Bridge it.</b> Open MIDIberry. <b>Input</b>: the phone's name. <b>Output</b>: <em>Midiboard Port</em>.
+      Touch a pad on the phone — MIDIberry shows the notes arriving. <b>Keep MIDIberry open</b>: it is the
+      bridge, and closing it stops the notes.</li>
+    <li><b>Select the port in your software.</b> Enable <em>Midiboard Port</em> as a MIDI input — not the
+      phone's Bluetooth name, which the DAW either does not list or cannot open.
+      <ul>
+        <li><b>Gig Performer</b>: Options → MIDI Ports, tick the port as an input; then MIDI-learn widgets as usual.</li>
+        <li><b>Ableton Live</b>: Settings → Link, Tempo &amp; MIDI, set the port's <em>Track</em> (and <em>Remote</em>, for mapping) to On.</li>
+        <li><b>FL Studio</b>: Options → MIDI settings, enable the port in the Input list.</li>
+        <li><b>Reaper</b>: Preferences → Audio → MIDI Inputs, enable the port.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>If nothing arrives</h2>
+  <ul>
+    <li><b>The phone is paired but MIDIberry does not list it.</b> Open Midiboard first and make sure it
+      says it is waiting for a connection, then restart MIDIberry. If it still is not there, remove the
+      device in Windows Bluetooth settings and pair it again.</li>
+    <li><b>MIDIberry shows notes, the DAW does not.</b> The DAW is listening to the wrong port — select the
+      loopMIDI port, and check the DAW was opened <em>after</em> the port was created (most only scan at launch).</li>
+    <li><b>It worked and then went silent.</b> A PC going to sleep drops the Bluetooth link. Reconnect from
+      MIDIberry; in Midiboard, the connection light tells you whether the phone still thinks it is connected.</li>
+    <li><b>A note is stuck.</b> Midiboard's panic button sends All Notes Off on every channel.</li>
+  </ul>
+
+  <h2>Newer Windows 11</h2>
+  <p>
+    Microsoft is building MIDI support into Windows 11 (Windows MIDI Services), including virtual ports of
+    its own. Where your version already offers those, one can stand in for loopMIDI; the Bluetooth bridge
+    step is still needed for now. The setup above works on Windows 10 and Windows 11.
+  </p>
+
+  <h2>Rather not use Bluetooth?</h2>
+  <p>
+    Midiboard can also connect over Wi-Fi as an RTP-MIDI session — see
+    <a href="support.html">Support → Connecting over Wi-Fi</a>. Bluetooth is usually the simpler of the two
+    on stage: no network to depend on.
+  </p>
+
+  <p class="cta"><a class="btn btn-primary" href="https://apps.apple.com/app/apple-store/id6801598625?pt=129311175&amp;ct=windows-guide&amp;mt=8">Get Midiboard on the App Store</a></p>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>Midiboard — built by Safa Bulat</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
